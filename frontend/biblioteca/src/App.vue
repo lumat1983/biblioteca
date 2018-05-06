@@ -150,24 +150,14 @@
                 </div>
             </div>
 
-            <div class="wrapper wrapper-content">
-                <div class="middle-box text-center animated fadeInRightBig">
-                    <h3 class="font-bold">This is page content</h3>
-                    <div class="error-desc">
-                        You can create here any grid layout you want. And any variation layout you imagine:) Check out
-                        main dashboard and other site. It use many different layout.
-                        <br/><a href="index.html" class="btn btn-primary m-t">Dashboard</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer">
-                <div class="pull-right">
-                    10GB of <strong>250GB</strong> Free.
-                </div>
-                <div>
-                    <strong>Copyright</strong> Example Company &copy; 2014-2017
-                </div>
-            </div>
+            <!--contenido -->
+            <transition name="fade" mode="out-in" appear>
+                <router-view></router-view>
+            </transition>
+            <!--contenido -->
+            <!-- footer -->
+            <footer-inspinia></footer-inspinia>
+            <!-- footer -->
 
         </div>
         </div>
@@ -176,12 +166,24 @@
 
 <script>
 import menuInspinia from './components/menu.vue'
+import footerInspinia from './components/footer.vue'
+
 
 export default {
   name: 'app',
   components: {
-    menuInspinia: menuInspinia
+    menuInspinia,
+    footerInspinia
   }
 }
 </script>
 
+<style>
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity 0.5s
+        }
+        
+        .fade-enter, .fade-leave-active {
+        opacity: 0
+        }
+</style>

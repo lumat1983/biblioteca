@@ -23,7 +23,8 @@
             <a href="#"><i class="fa fa-files-o"></i> <span class="nav-label">Other Pages</span><span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
 
-                <li class="active"><a href="empty_page.html">Empty page</a></li>
+                <li class="active"><router-link to="/" tag="a">Inicio</router-link></li>
+                
             </ul>
         </li>
     </ul>
